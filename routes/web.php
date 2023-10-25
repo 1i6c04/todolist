@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $lists = \App\Models\Todolist::all();
+    return view('todolist', ['lists' => $lists]);
 });
